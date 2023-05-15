@@ -24,7 +24,6 @@ body {
 
 main {
   margin: 15vh auto 0;
-  background-color: var(--white);
   width: 327px;
   border-radius: 1rem;
   box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
@@ -38,6 +37,10 @@ header {
   border-top-right-radius: 1rem;
   width: 327px;
   height: 200px;
+}
+
+section {
+  background-color: var(--white);
 }
 
 .texts {
@@ -84,5 +87,12 @@ time {
 }
 
 @media screen and (min-width: 900px) {
-  
+  header {
+    border-top-right-radius: 0rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  main {
+    flex-direction: row;
+  }
 }
