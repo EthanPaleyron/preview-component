@@ -24,6 +24,7 @@ body {
 
 main {
   margin: 15vh auto 0;
+  background-color: var(--white);
   width: 327px;
   border-radius: 1rem;
   box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
@@ -33,14 +34,12 @@ main {
 
 header {
   background-image: url(img/bitmap.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   width: 327px;
   height: 200px;
-}
-
-section {
-  background-color: var(--white);
 }
 
 .texts {
@@ -59,9 +58,10 @@ p {
 }
 
 article {
-  padding: 1.8rem;
+  position: relative;
+  padding: 0.8rem 1.8rem 1.2rem;
+  height: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -79,20 +79,91 @@ time {
   font-size: 13px;
 }
 
+label {
+  display: flex;
+  align-items: center;
+}
+
 .share {
   margin-left: 4rem;
   background-color: var(--dark-white);
   padding: 0.6rem;
   border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* CHECKBOX */
+input {
+  display: none;
+}
+
+.link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  color: var(--white);
+  width: 100%;
+  background-color: var(--dark-grey);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1.5rem 1.8rem;
+  gap: 1rem;
+  display: none;
+  flex-direction: row;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.link h2 {
+  color: var(--grey);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+input:checked ~ .link {
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 900px) {
+  article {
+    position: relative;
+  }
+
   header {
+    width: 785px;
+    height: auto;
     border-top-right-radius: 0rem;
     border-bottom-left-radius: 1rem;
   }
 
   main {
     flex-direction: row;
+    width: 730px;
+    height: 285px;
   }
+
+  .link {
+    right: 50px;
+    top: 0;
+    box-shadow: 0px 10px 10px rgba(201, 213, 225, 0.503415);
+  }
+
+  /* .bubble-text::after{
+content:""; 
+border-left: 30px solid transparent;
+border-right: 30px solid transparent;
+border-top: 25px solid #139ee0;
+position: absolute;
+} */
+
+
 }
